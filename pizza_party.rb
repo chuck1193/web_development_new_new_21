@@ -48,7 +48,7 @@ def pizza_party
     puts "How many slices does each person want to have? "
     slices_per_person = gets.chomp.to_i
 
-    if slices_per_person == ""  
+    if slices_per_person == 0 
       puts "That's not a number. Come on now. Redo that. "
       redo 
     else
@@ -63,8 +63,13 @@ def pizza_party
     total_num_of_pizzas = slices / 8 
     slices_leftover = slices % 8 
 
-    puts slices
-    puts slices_leftover
+    if slices_leftover > 0 
+      total_num_of_pizzas += 1
+      puts "You need #{total_num_of_pizzas} pizzas."
+    else 
+      puts "You need #{total_num_of_pizzas} pizzas."
+    end
+
 
   end
 
