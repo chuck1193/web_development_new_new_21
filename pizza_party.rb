@@ -48,7 +48,7 @@ def pizza_party
     puts "How many slices does each person want to have? "
     slices_per_person = gets.chomp.to_i
 
-    if slices_per_person == ""   
+    if slices_per_person == ""  
       puts "That's not a number. Come on now. Redo that. "
       redo 
     else
