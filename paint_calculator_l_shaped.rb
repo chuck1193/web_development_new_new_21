@@ -12,7 +12,7 @@ def paint_calculator_l_shaped
     puts "What is the legth in feet? "
     rectangle1_length = gets.chomp.to_f
 
-    puts "For the second triangle: "
+    puts "For the second rectangle: "
     puts "What is the width in feet? "
     rectangle2_width = gets.chomp.to_f
 
