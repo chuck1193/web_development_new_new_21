@@ -1,36 +1,32 @@
 def self_checkout
   done = false
+  items = []
   until done == true 
     puts "Enter the price of the item: "
-    price1 = gets.chomp.to_f
+    price = gets.chomp.to_f
 
     puts "Enter the quantity of item: "
-    quantity1 = gets.chomp.to_f
-
-    puts "Enter the price of the item: "
-    price2 = gets.chomp.to_f  
-
-    puts "Enter the quantity of item: "
-    quantity2 = gets.chomp.to_f
-
-    puts "Enter the price of the item: "
-    price3 = gets.chomp.to_f
-
-    puts "Enter the quantity of item: "
-    quantity3 = gets.chomp.to_f
+    quantity = gets.chomp.to_f
 
 
-    if price1 == 0.0 || quantity1 == 0.0 || price2 == 0.0 || quantity2 == 0.0 || price3 == 0.0 || quantity3 == 0.0
+    if price == 0.0 || quantity == 0.0 
       puts "You have to enter something so I can properly calculate the total."
       redo
     else
-      subtotal = (price1 * quantity1) + (price2 * quantity2) + (price3 * quantity3)
-      tax = subtotal * 0.055
-      total = subtotal + tax
+      puts "Are there more items to be entered?(y/n) "
+      done_question = gets.chomp 
+      actual_price = price * quantity 
+      items << actual_price
+    end
+    if done_question == "n"
       done = true 
+    
     end
   end
 
+  subtotal = items.sum
+  tax = subtotal * 0.055
+  total = subtotal + tax
   puts "Subtotal: $#{subtotal}"
   puts "Tax: $#{tax}"
   puts "Total: $#{total.round(2)}"
