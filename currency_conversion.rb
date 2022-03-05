@@ -5,9 +5,11 @@ def currency_conversion
   puts "What is the exchange rate? "
   rate_from = gets.chomp.to_f
 
-  amount_to = (amount_from * rate_from) / 0.0111
+  rate_to = rate_from / 100 
 
-  puts "#{amount_from} euros at an exchange rate of #{rate_from} is #{amount_to} US dollars."
+  amount_to = amount_from * rate_to
+
+  puts "#{amount_from.round(2)} euros at an exchange rate of #{rate_from.round(2)} is #{amount_to.round(2)} US dollars."
 end
 
 currency_conversion
