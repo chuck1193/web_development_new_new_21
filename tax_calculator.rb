@@ -1,3 +1,4 @@
+# montana / oregon / new hampshire / delaware 
 def tax_calculator
   puts "What is the order amount? "
   order_amount = gets.chomp.to_f
@@ -5,7 +6,9 @@ def tax_calculator
   puts "What is the state? "
   state = gets.chomp.downcase
 
-  if state == "al" || state == "alabama"
+  if state == "montana" || state == "mt" || state == "oregon" || state == "or" || state == "new hampshire" || state == "nh" || state == "delaware" || state == "de"
+    puts "There's no tax in #{state.capitalize}."
+  elsif state == "al" || state == "alabama"
     tax = 4.0 / 100
     total = order_amount + tax
   elsif state == "arizona" || state == "az"
@@ -23,25 +26,22 @@ def tax_calculator
   elsif state == "connecticut" || state == "ct"
     tax = 6.35 / 100
     total = order_amount + tax
-  elsif state == "delaware" || state == "de"
-    tax = 0 / 100
-    total = order_amount + tax
-  elsif state == "district of columbia" || "dc"
+  elsif state == "district of columbia" || state == "dc"
     tax = 6.0 / 100
     total = order_amount + tax
-  elsif state == "florida" || "fl"
+  elsif state == "florida" || state == "fl"
     tax = 6.0 / 100
     total = order_amount + tax
-  elsif state == "georgia" || "ga"
+  elsif state == "georgia" || state == "ga"
     tax = 4.0 / 100
     total = order_amount + tax
-  elsif state == "hawaii" || "hi"
+  elsif state == "hawaii" || state == "hi"
     tax = 4.0 / 100
     total = order_amount + tax
   elsif state == "idaho" || state == "id"
     tax = 6.0 / 100
     total = order_amount + tax
-  elsif state == "illinois" || "il"
+  elsif state == "illinois" || state == "il"
     tax = 6.25 / 100
     total = order_amount + tax
   elsif state == "indiana" || state == "in"
@@ -80,17 +80,11 @@ def tax_calculator
   elsif state == "missouri" || state == "mo"
     tax = 4.225 / 100
     total = order_amount + tax
-  elsif state == "montana" || state == "mt"
-    tax = 0.0 / 100
-    total = order_amount + tax
   elsif state == "nebraska" || state == "ne"
     tax = 5.5 / 100
     total = order_amount + tax
   elsif state == "nevada" || state == "nv"
     tax = 6.85 / 100
-    total = order_amount + tax
-  elsif state == "new hampshire" || state == "nh"
-    tax = 0.0 / 100
     total = order_amount + tax
   elsif state == "new jersey" || state == "nj"
     tax = 6.625 / 100
@@ -112,9 +106,6 @@ def tax_calculator
     total = order_amount + tax
   elsif state == "oklahoma" || state == "ok"
     tax = 4.5 / 100
-    total = order_amount + tax
-  elsif state == "oregon" || state == "or"
-    tax = 0.0 / 100
     total = order_amount + tax
   elsif state == "pennsylvania" || state == "pa"
     tax = 6.0 / 100
